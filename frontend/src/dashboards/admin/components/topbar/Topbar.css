@@ -1,0 +1,237 @@
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1e293b;
+  position: sticky;
+  top: 0;
+  
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 99; 
+}
+
+.topbar-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.topbar-right-section {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.topbar-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  color: #334155;
+  padding: 0 16px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.topbar-date {
+  font-weight: 600;
+}
+
+.topbar-time {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.topbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.topbar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.topbar-chevron {
+  color: #64748b;
+}
+
+
+/* Profil + menu */
+.topbar-profile-wrapper { position: relative; }
+.topbar-profile { cursor: pointer; }
+
+.topbar-initials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #111a3a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.topbar-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+}
+
+.topbar-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 190px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  z-index: 999;
+  overflow: hidden;
+}
+
+.topbar-menu button {
+  width: 100%;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #111a3a;
+}
+.topbar-menu button:hover { background: #f3f4f8; }
+
+/* Popup profil */
+.pm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 40, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.pm-box {
+  background: #fff;
+  width: 92%;
+  max-width: 480px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.pm-header h3 { margin: 0; color: #111a3a; }
+
+.pm-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #888;
+}
+
+.pm-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 16px;
+}
+.pm-tab {
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #777;
+  border-bottom: 2px solid transparent;
+}
+.pm-tab.active {
+  color: #111a3a;
+  border-bottom-color: #c9a24d;
+  font-weight: 600;
+}
+
+.pm-form { display: flex; flex-direction: column; gap: 12px; }
+.pm-row { display: flex; gap: 12px; }
+.pm-row label { flex: 1; }
+
+.pm-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #444;
+}
+.pm-form input {
+  padding: 9px 11px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.pm-form input:focus { outline: none; border-color: #111a3a; }
+
+.pm-error, .pm-success {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.pm-error { background: #fdecea; color: #c0392b; }
+.pm-success { background: #e8f8ee; color: #1e7e46; }
+
+.pm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+.pm-btn-cancel, .pm-btn-save {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.pm-btn-cancel { background: #eceef3; color: #333; }
+.pm-btn-save { background: #111a3a; color: #fff; }
+.pm-btn-save:hover:not(:disabled) { background: #1d2a5c; }
+.pm-btn-cancel:disabled, .pm-btn-save:disabled { opacity: 0.6; cursor: not-allowed; }

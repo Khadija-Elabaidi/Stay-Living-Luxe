@@ -1,0 +1,186 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 40px;
+  background-color: var(--navbar-bg);
+  box-shadow: 0 2px 10px var(--navbar-shadow);
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  height: 23px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: background-color .3s ease, box-shadow .3s ease;
+}
+
+.navbar-logo {
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+} 
+.navbar-logo .logo-img {
+  height: 170px;
+  width: 240px;
+  object-fit: contain;
+
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+  position: relative;
+}
+
+.menu-item a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-gray);
+  letter-spacing: 1px;
+  transition: color .3s ease;
+  position: relative;
+  padding-bottom: 8px;
+  display: block;
+}
+
+.menu-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold-color);
+  transition: width .3s ease, left .3s ease;
+}
+
+.menu-item a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.menu-item a:hover,
+.menu-item.active a {
+  color: var(--gold-color);
+}
+
+.menu-item.active a::after {
+  left: 0;
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.custom-btn.primary.btn-reserve {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color .3s ease;
+}
+
+.custom-btn.primary.btn-reserve:hover {
+  background-color: var(--button-hover);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--burger-color);
+  transition: .3s ease;
+}
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 40px;
+    padding: 15px 20px 15px 10px;
+  }
+
+  .navbar-logo .logo-img {
+    width: auto;
+    height: 110px;
+    display: block;
+  }
+
+  /* Le menu déroulant */
+  .navbar-menu {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: var(--menu-bg);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+    transform: translateY(-150%);
+    transition: .3s ease;
+  }
+
+  .navbar-menu.open {
+    transform: translateY(0);
+  }
+
+  /* On cache seulement Réserver et la langue */
+  .btn-reserve,
+  .language-selector {
+    display: none;
+  }
+
+  /* Le ThemeToggle reste visible */
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 2;
+    margin-left: auto;
+  }
+
+  .burger {
+    display: flex;
+    order: 3;
+    margin-left: 12px;
+  }
+}
+
+.navbar-user-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.navbar-user-btn:hover {
+  color: #b8935a; /* adapte au doré de ton site */
+  transform: scale(1.08);
+}

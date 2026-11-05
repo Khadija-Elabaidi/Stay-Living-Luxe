@@ -1,0 +1,67 @@
+.calendar-picker {
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.calendar-header {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: 600;
+  color: #717171;
+  font-size: 0.85rem;
+  padding-bottom: 8px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.calendar-day:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+/* Jour Sélectionné */
+.calendar-day.selected {
+  background-color: #222222 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* Jour Désactivé / Bloqué / Passé */
+.calendar-day.disabled {
+  color: #c0c0c0;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+/* Ligne barrée sur le chiffre */
+.calendar-day.disabled .day-number {
+  text-decoration: line-through;
+  text-decoration-color: #a0a0a0;
+  text-decoration-thickness: 1.5px;
+}

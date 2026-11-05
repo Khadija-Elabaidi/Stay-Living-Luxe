@@ -1,0 +1,87 @@
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1e293b;
+  position: sticky;
+  /* width: calc(100% - 240px);  */
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 99; 
+}
+
+.topbar-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.topbar-right-section {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.topbar-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  color: #334155;
+  padding: 0 16px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.topbar-date {
+  font-weight: 600;
+}
+
+.topbar-time {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.topbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #e2e8f0;
+  cursor: pointer;
+}
+
+.topbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.topbar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.topbar-chevron {
+  color: #64748b;
+}

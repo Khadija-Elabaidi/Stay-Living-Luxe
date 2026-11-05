@@ -1,0 +1,229 @@
+.testimonials-section {
+
+  background:var(--testimonials-background);
+
+  padding-bottom:6rem;
+  padding-top:2rem;
+
+}
+
+
+
+.testimonials-container {
+
+  max-width:80rem;
+
+  margin:auto;
+
+  padding:0 1.5rem;
+
+}
+
+
+@media(min-width:1024px){
+
+  .testimonials-container{
+
+    padding-left:2.5rem;
+
+    padding-right:2.5rem;
+
+  }
+
+}
+
+
+
+
+
+.testimonials-header {
+
+  text-align:center;
+
+  margin-bottom:3.5rem;
+
+}
+
+
+
+.testimonials-eyebrow {
+
+  color:var(--gold-color);
+
+  font-size:.75rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.2em;
+
+  margin-bottom:.75rem;
+
+}
+
+
+
+.testimonials-title {
+
+  font-family:var(--font-display,serif);
+
+  font-size:2.25rem;
+
+  color:var(--text-dark);
+
+}
+
+
+
+@media(min-width:1024px){
+
+  .testimonials-title{
+
+    font-size:3rem;
+
+  }
+
+}
+
+
+
+
+
+.testimonials-grid {
+
+  display:grid;
+
+  grid-template-columns:1fr;
+
+  gap:1.5rem;
+
+}
+
+
+
+@media(min-width:768px){
+
+  .testimonials-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+}
+
+
+
+@media(min-width:1024px){
+
+  .testimonials-grid{
+
+    grid-template-columns:repeat(4,1fr);
+
+  }
+
+}
+
+
+
+
+
+
+
+.testimonial-card {
+
+  background:var(--bg-color);
+
+  padding:1.75rem;
+
+  display:flex;
+
+  flex-direction:column;
+
+  box-shadow:0 10px 30px var(--navbar-shadow);
+
+  transition:box-shadow .3s ease;
+
+}
+
+
+
+.testimonial-card:hover {
+
+  box-shadow:0 15px 40px var(--navbar-shadow);
+
+}
+
+
+
+
+
+
+
+.testimonial-quote {
+
+  color:color-mix(in srgb, var(--gold-color) 50%, transparent);
+
+  margin-bottom:1rem;
+
+}
+
+
+
+.testimonial-text {
+
+  color:var(--text-gray);
+
+  font-size:.95rem;
+
+  line-height:1.7;
+
+  flex:1;
+
+}
+
+
+
+
+
+
+
+.testimonial-stars {
+
+  display:flex;
+
+  align-items:center;
+
+  gap:.25rem;
+
+  margin-top:1.25rem;
+
+}
+
+
+
+.star {
+
+  fill:var(--gold-color);
+
+  color:var(--gold-color);
+
+}
+
+
+
+
+
+
+
+.testimonial-author {
+
+  margin-top:.75rem;
+
+  color:var(--text-dark);
+
+  font-size:.875rem;
+
+  font-weight:600;
+
+  letter-spacing:.05em;
+
+}

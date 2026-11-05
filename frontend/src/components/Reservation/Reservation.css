@@ -1,0 +1,617 @@
+/* --- CARTE PRINCIPALE DE RÉSERVATION --- */
+.reservation-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  max-width: 380px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- CONTENEUR DES INPUTS (DATES + VOYAGEURS) --- */
+.reservation-inputs {
+  border: 1px solid #b0b0b0;
+  border-radius: 8px;
+  /* CRUCIAL: overflow visible pour laisser déborder la pop-up voyageurs */
+  overflow: visible !important; 
+  margin-bottom: 16px;
+  background-color: #ffffff;
+}
+
+/* --- GRILLE DES DATES (ARRIVÉE / DÉPART) --- */
+.date-grid {
+  display: flex;
+  border-bottom: 1px solid #b0b0b0;
+}
+
+.date-item {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.date-item.arrival {
+  border-right: 1px solid #b0b0b0;
+}
+
+.date-item label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #222222;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.date-picker-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #222222;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+/* --- SÉLECTEUR DE VOYAGEURS --- */
+.guests-selector-container {
+  position: relative;
+}
+
+.guests-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0 0 8px 8px;
+  transition: background-color 0.2s ease;
+}
+
+.guests-selector:hover {
+  background-color: #f7f7f7;
+}
+
+.guests-info label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #222222;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.guests-value {
+  font-size: 14px;
+  color: #222222;
+  font-weight: 400;
+}
+
+.chevron {
+  font-size: 10px;
+  color: #222222;
+  transition: transform 0.2s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* --- POP-UP DÉROULANTE POUR LE CHOIX DES VOYAGEURS --- */
+.guests-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 9999; /* Priorité d'affichage au-dessus du reste */
+}
+
+.guest-type-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.guest-type-row:last-child {
+  margin-bottom: 0;
+}
+
+.guest-type-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.type-subtitle {
+  font-size: 12px;
+  color: #717171;
+}
+
+/* --- BOUTONS COMPTEURS (+ / -) --- */
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-counter {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #b0b0b0;
+  background: #ffffff;
+  font-size: 16px;
+  color: #222222;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-counter:hover:not(:disabled) {
+  border-color: #222222;
+  background-color: #f7f7f7;
+}
+
+.btn-counter:disabled {
+  opacity: 0.3;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.count-value {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 16px;
+  text-align: center;
+  color: #222222;
+}
+
+/* --- INFORMATION SUR L'ANNULATION --- */
+.cancellation-info {
+  background-color: #f7f7f7;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* --- BOUTON DE RÉSERVATION --- */
+.btn-reserve {
+  width: 100%;
+  background-color: #C5A059;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-reserve:hover {
+  background-color: #d4a651;
+}
+
+/* --- TEXTE DU BAS --- */
+.no-charge-text {
+  text-align: center;
+  font-size: 12px;
+  color: #717171;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.date-item {
+  flex: 1;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer; /* Indique que tout le bloc est cliquable */
+  user-select: none;
+}
+
+.date-item:hover {
+  background-color: #f7f7f7; /* Effet de survol */
+}
+
+.date-item label {
+  cursor: pointer;
+}
+
+
+.custom-datepicker {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Date sélectionnée invalide ou indisponible */
+.date-picker-input.date-disabled {
+  color: #a0a0a0 !important;
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Grise les dates antérieures au jour actuel sur les navigateurs Webkit */
+.date-picker-input::-webkit-datetime-edit-year-field:disabled,
+.date-picker-input::-webkit-datetime-edit-month-field:disabled,
+.date-picker-input::-webkit-datetime-edit-day-field:disabled {
+  color: #c4c4c4;
+}
+
+
+.reservation-error-message {
+  background-color: #ffe6e6;
+  color: #d93025;
+  border: 1px solid #f5c6cb;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+
+/* Ajustements pour React-DatePicker */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Affichage des dates indisponibles (barrées et grisées comme dans la photo) */
+.react-datepicker__day--disabled {
+  color: #b0b0b0 !important;
+  text-decoration: line-through !important;
+  background-color: transparent !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+/* =========================================================
+   CALENDRIER PERSONNALISÉ
+   ========================================================= */
+
+.date-item {
+  position: relative;
+}
+
+.date-display {
+  cursor: pointer;
+  width: 100%;
+}
+
+.selected-date {
+  font-size: 13px;
+  color: #222222;
+  margin-top: 2px;
+  font-family: inherit;
+}
+
+.calendar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10000;
+}
+
+
+/* =========================================================
+   CARTE CALENDRIER
+   ========================================================= */
+
+.calendar-picker {
+  width: 330px;
+  background: #ffffff;
+  border: 1px solid #dedede;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.calendar-month {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.calendar-nav {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 28px;
+  color: #222;
+}
+
+.calendar-nav:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* =========================================================
+   JOURS DE LA SEMAINE
+   ========================================================= */
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #777;
+}
+
+
+/* =========================================================
+   GRILLE DES JOURS
+   ========================================================= */
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  margin: auto;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #222;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-day:hover:not(:disabled) {
+  background-color: #f3f3f3;
+}
+
+
+/* =========================================================
+   DATE SÉLECTIONNÉE
+   ========================================================= */
+
+.calendar-day.selected {
+  background-color: #222222;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DATE NON DISPONIBLE
+   ========================================================= */
+
+.calendar-day.unavailable {
+  color: #b0b0b0;
+
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #999999;
+
+  cursor: not-allowed;
+
+  background-color: transparent;
+}
+
+
+/*
+ * Très important :
+ * aucune animation au survol
+ * sur les dates bloquées.
+ */
+
+.calendar-day.unavailable:hover {
+  background-color: transparent;
+}
+
+
+/* =========================================================
+   CASE VIDE
+   ========================================================= */
+
+.calendar-day.empty {
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .calendar-picker {
+    width: 300px;
+  }
+
+  .calendar-day {
+    width: 34px;
+    height: 34px;
+  }
+
+}
+
+
+/* --- CALENDRIER CONTAINER --- */
+.calendar-picker {
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  user-select: none;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.calendar-nav {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #717171;
+  margin-bottom: 8px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 4px;
+}
+
+/* --- JOUR DE BASE --- */
+.calendar-day {
+  height: 40px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+/* --- DATES INDISPONIBLES / BARRÉES (Style Photo) --- */
+.calendar-day.unavailable {
+  color: #b0b0b0 !important;
+  text-decoration: line-through !important;
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+
+/* --- PLAGE DE DÉPLACEMENT ET SÉLECTION --- */
+.calendar-day.range-start,
+.calendar-day.range-end,
+.calendar-day.selected {
+  background-color: #222222;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.calendar-day.range-start::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  background-color: #f7f7f7;
+  z-index: -1;
+}
+
+.calendar-day.range-end::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background-color: #f7f7f7;
+  z-index: -1;
+}
+
+.calendar-day.in-range {
+  background-color: #f7f7f7;
+  border-radius: 0;
+  color: #222222;
+}
+
+/* Encerclement style photo pour le début */
+.calendar-day.range-start {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #222222;
+}

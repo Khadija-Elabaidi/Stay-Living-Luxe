@@ -1,0 +1,164 @@
+.admin-reservations-container {
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.reservations-table th {
+  background-color: #fafafa;
+  color: #6c757d;
+  font-weight: 600;
+  padding: 16px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.reservations-table td {
+  padding: 16px;
+  border-bottom: 1px solid #edf2f7;
+  color: #2d3748;
+}
+
+.price-cell {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badge-warning { background-color: #ebf8ff; color: #3182ce; }
+.badge-success { background-color: #e6fffa; color: #319795; }
+.badge-danger { background-color: #fff5f5; color: #e53e3e; }
+.badge-secondary { background-color: #edf2f7; color: #718096; }
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.1s ease;
+}
+
+.btn-action:hover {
+  transform: scale(1.1);
+}
+
+.btn-accept {
+  background-color: #e6fffa;
+  color: #38a169;
+  border: 1px solid #38a169;
+}
+
+.btn-reject {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+}
+
+.btn-cancel {
+  background-color: #6c757d;
+  color: #fff;
+}
+.btn-cancel:hover {
+  background-color: #565e64;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: modal-in 0.15s ease-out;
+}
+
+.modal-box h3 {
+  margin: 0 0 8px;
+}
+
+.modal-box p {
+  margin: 0 0 16px;
+  color: #555;
+}
+
+.modal-error {
+  color: #dc3545 !important;
+  font-size: 0.9rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modal-btn-secondary {
+  background: #e9ecef;
+  color: #333;
+}
+
+.modal-btn-danger {
+  background: #dc3545;
+  color: #fff;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}

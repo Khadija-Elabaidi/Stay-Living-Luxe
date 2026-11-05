@@ -1,0 +1,275 @@
+.about-section {
+
+  background: var(--bg-color);
+
+  padding-bottom:6rem;
+  padding-top: 2rem;
+  margin-top: 4rem;
+
+  overflow:hidden;
+
+}
+
+
+
+.about-container {
+
+  max-width:80rem;
+
+  margin:auto;
+
+  padding:0 1.5rem;
+
+  display:grid;
+
+  grid-template-columns:1fr;
+
+  gap:3.5rem;
+
+  align-items:center;
+
+}
+
+
+@media(min-width:1024px){
+
+  .about-container{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:3.5rem;
+
+    padding-left:2.5rem;
+
+    padding-right:2.5rem;
+
+  }
+
+}
+
+
+
+
+.about-image-block {
+
+  position:relative;
+
+}
+
+
+.about-image-wrapper {
+
+  height:420px;
+
+  overflow:hidden;
+
+}
+
+
+
+.about-image {
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    sepia(.15)
+    saturate(1.1)
+    contrast(1.05);
+
+}
+
+
+
+
+
+
+
+.experience-box {
+
+  position:absolute;
+
+  bottom:-2rem;
+
+  right:-1.5rem;
+
+  background:var(--text-dark);
+
+  color:var(--bg-color);
+
+  padding:1.5rem 2rem;
+
+  box-shadow:0 15px 40px var(--navbar-shadow);
+
+}
+
+
+
+@media(max-width: 900px){
+
+  .experience-box{
+
+    right:-2.5rem;
+
+  }
+
+}
+
+
+
+.experience-number {
+
+  font-family:var(--font-display,serif);
+
+  font-size:2.5rem;
+
+  color:var(--gold-color);
+
+}
+
+
+
+.experience-text {
+
+  font-size:.7rem;
+
+  color:var(--bg-color);
+
+  letter-spacing:.2em;
+
+  margin-top:.25rem;
+
+}
+
+
+
+
+
+
+
+.about-eyebrow {
+
+  color:var(--gold-color);
+
+  font-size:.75rem;
+
+  letter-spacing:.2em;
+
+  text-transform:uppercase;
+
+  margin-bottom:.75rem;
+
+}
+
+
+
+
+
+.about-title {
+
+  font-family:var(--font-display,serif);
+
+  font-size:2.25rem;
+
+  line-height:1.1;
+
+  color:var(--text-dark);
+
+  margin-bottom:1.5rem;
+
+}
+
+
+
+@media(min-width:1024px){
+
+  .about-title{
+
+    font-size:3rem;
+
+  }
+
+}
+
+
+
+
+
+.about-text {
+
+  color:var(--text-gray);
+
+  line-height:1.7;
+
+  margin-bottom:1rem;
+
+}
+
+
+
+.about-text:last-of-type {
+
+  margin-bottom:2rem;
+
+}
+
+
+
+
+
+
+
+.about-stats {
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1.5rem;
+
+}
+
+
+
+
+
+.stat-item {
+
+  border-left:2px solid var(--gold-color);
+
+  padding-left:1rem;
+
+}
+
+
+
+
+
+.stat-number {
+
+  font-family:var(--font-display,serif);
+
+  font-size:1.875rem;
+
+  color:var(--text-dark);
+
+}
+
+
+
+
+
+.stat-label {
+
+  font-size:.75rem;
+
+  color:var(--text-gray);
+
+  letter-spacing:.05em;
+
+  margin-top:.25rem;
+
+}

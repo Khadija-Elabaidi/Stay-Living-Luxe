@@ -1,0 +1,33 @@
+:root {
+  --primary-gold: #c5a880; 
+  --hover-gold: #b3946b;
+  --text-white: #ffffff;
+}
+
+.custom-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  font-family: 'Arial', sans-serif; 
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-btn.primary {
+  background-color: var(--primary-gold);
+  color: var(--text-white);
+}
+
+.custom-btn.primary:hover {
+  background-color: var(--hover-gold);
+}
+
+.custom-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}

@@ -1,0 +1,256 @@
+.details-appartement-page .appartement-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.details-appartement-page .annonce-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.details-appartement-page .header-left h1 {
+  font-size: 22px;
+  color: #333;
+}
+
+.details-appartement-page .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d9534f;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.details-appartement-page .price span {
+  font-size: 14px;
+  color: #666;
+}
+
+.details-appartement-page .action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.details-appartement-page .btn-action {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.details-appartement-page .gallery-grid {
+  display: flex;
+  gap: 12px;
+  height: 610px; 
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.details-appartement-page .main-photo {
+  flex: 55;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.details-appartement-page .main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.details-appartement-page .sub-photos-grid {
+  flex: 45;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  height: 100%;
+}
+
+.details-appartement-page .grid-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.details-appartement-page .grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+}
+
+.details-appartement-page .main-photo:hover img,
+.details-appartement-page .grid-item:hover img {
+  transform: scale(1.02);
+}
+
+.details-appartement-page .sub-photos-grid .grid-item:nth-child(2) img {
+  border-top-right-radius: 16px;
+}
+
+.details-appartement-page .sub-photos-grid .grid-item:nth-child(4) img {
+  border-bottom-right-radius: 16px;
+}
+
+.details-appartement-page .more-photos-item {
+  position: relative;
+}
+
+.details-appartement-page .overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom-right-radius: 16px;
+}
+
+.details-appartement-page .lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.details-appartement-page .lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.details-appartement-page .lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  transition: background 0.2s;
+}
+
+.details-appartement-page .lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.details-appartement-page .nav-prev { left: 20px; }
+.details-appartement-page .nav-next { right: 20px; }
+
+.details-appartement-page .lightbox-body {
+  position: relative;
+  max-width: 80vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-appartement-page .lightbox-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.details-appartement-page .lightbox-counter {
+  color: white;
+  margin-top: 15px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.details-appartement-page .content-layout {
+  display: flex;
+  gap: 30px;
+}
+
+.details-appartement-page .details-section { flex: 2; }
+.details-appartement-page .contact-sidebar { flex: 1; }
+
+.details-appartement-page .features-bar {
+  background-color:#F8F3EA;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.details-appartement-page .specs {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.details-appartement-page .description h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+.details-appartement-page .description p {
+  font-size: 15px;
+  color: #484848;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .details-appartement-page .gallery-grid {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .details-appartement-page .main-photo {
+    height: 250px;
+  }
+
+  .details-appartement-page .sub-photos-grid {
+    height: 250px;
+  }
+
+  .details-appartement-page .content-layout {
+    flex-direction: column;
+  }
+}

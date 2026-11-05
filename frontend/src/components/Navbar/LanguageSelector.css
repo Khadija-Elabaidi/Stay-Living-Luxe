@@ -1,0 +1,75 @@
+.language-selector-container {
+  position: relative;
+  display: inline-block;
+  font-family: 'Arial', sans-serif;
+}
+
+.language-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  background: transparent;
+  border: none;
+  color: #1a1a1a; 
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.arrow-icon {
+  width: 17px;
+  height: 24px;
+  transition: transform 0.3s ease-in-out; 
+  transform: rotate(180deg); 
+}
+
+.arrow-icon.open {
+  transform: rotate(0deg);
+}
+.language-trigger .arrow {
+  display: inline-block;
+  font-size: 10px;
+  transform: rotate(180deg); 
+  transition: transform 0.2s ease;
+}
+
+.language-trigger .arrow.open {
+  transform: rotate(0deg); 
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  min-width: 60px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.language-dropdown li {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555555;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.language-dropdown li:hover {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.language-dropdown li.active {
+  background-color: #eaeaea;
+  color: #000000;
+}
